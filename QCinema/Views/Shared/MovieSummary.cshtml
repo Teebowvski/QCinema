@@ -1,0 +1,50 @@
+﻿@model Movie
+
+
+
+
+   
+<div class="col-md-3" style="padding-bottom:8px; padding-top:8px;">
+              <div class="movie-card ">
+
+                <a asp-controller="Movie" asp-action="MovieDetails" asp-route-id="@Model.Id">
+                  <figure class="card-banner">
+                    <img src="@Model.ImageUrl" alt="Sonic the Hedgehog 2 movie poster" >
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a >
+                    <h3 class="card-title">@Model.Name</h3>
+                  </a>
+
+                  <time datetime="2022">2022</time>
+                </div>
+
+                <div class="card-meta ">
+                  <div class=" badge-outline align-middle ">
+                     <p> @if (@Model.Category.Name== "Available"){
+                      <span class="badge bg-success text-white">Available</span>}
+                      else if (@Model.Category.Name== "Upcoming") {
+
+                           <span class="badge bg-primary text-white">Upcoming</span>
+                      }
+                      </p>
+                  </div>
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT122M">122 min</time>
+                  </div>
+
+                  <div class="rating">
+                   <ion-icon name="cash-outline"></ion-icon>
+
+                    <data>@Model.Price</data>
+                  </div>
+                </div>
+
+              </div>
+
+              </div>

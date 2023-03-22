@@ -1,0 +1,44 @@
+﻿@model MoviesListviewModel
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Html.PartialAsync("HomeCarousel")
+
+      <section class="top-rated col-md-10 offset-1 ">
+           <div class="container-fluid ">
+                <p class="section-subtitle">Qcinema</p>
+
+          <h2 class="h2 section-title">All Movies</h2>
+
+          <ul class="filter-list">
+
+            <li>
+              <button class="filter-btn">Movies</button>
+            </li>
+
+            <li>
+              <button class="filter-btn">TV Shows</button>
+            </li>
+
+            <li>
+              <button class="filter-btn">Documentary</button>
+            </li>
+
+            <li>
+              <button class="filter-btn">Sports</button>
+            </li>
+
+          </ul>
+
+<div class="row justify-content-middle ">
+@foreach (Movie movie in Model.Movies)
+{
+	
+	@await Html.PartialAsync("MovieSummary", movie)
+}
+</div>
+</div>
+</section>

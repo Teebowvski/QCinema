@@ -1,0 +1,110 @@
+﻿<div>
+   
+     <div class="movie-detail">
+        <div class="container">
+
+          <figure class="movie-detail-banner">
+
+            <img src="@Model.ImageUrl" alt="Free guy movie poster">
+          
+
+            <button class="play-btn">
+              <ion-icon name="play-circle-outline"></ion-icon>
+            </button>
+
+          </figure>
+
+          <div class="movie-detail-content">
+
+            <p class="detail-subtitle">New Movie</p>
+
+            <h1 class="h1 detail-title">
+              @Model.Name
+            </h1>
+
+            <div class="meta-wrapper">
+
+              <div class="badge-wrapper">
+                <div class="badge badge-fill">PG 13</div>
+
+                <div class="badge badge-outline">HD</div>
+              </div>
+
+              <div class="ganre-wrapper">
+                <a href="#">@Model.Genre.Name</a>
+
+                
+              </div>
+
+              <div class="date-time">
+
+                <div>
+                  <ion-icon name="calendar-outline"></ion-icon>
+
+                  <time datetime="2021">2021</time>
+                </div>
+
+                <div>
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <time datetime="PT115M">115 min</time>
+                </div>
+                 <div>
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <i>@Model.Producer.Name</i>
+                </div>
+                 <div>
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <i>@Model.Actor.Name</i>
+                </div>
+                 <div>
+                  <ion-icon name="cash-outline"></ion-icon>
+
+                   <data>@Model.Price</data>
+                </div>
+
+              </div>
+
+            </div>
+
+            <p class="storyline">
+              A bank teller called Guy realizes he is a background character in an open world video game called Free
+              City that will
+              soon go offline.
+            </p>
+
+            <div class="details-actions text-center"  >
+
+              <button class="share">
+                <ion-icon name="share-social"></ion-icon>
+
+                <span>Share</span>
+              </button>
+
+              <div class="title-wrapper">
+               <button class="btn btn-primary">
+                <ion-icon name="play"></ion-icon>
+
+                <span>Watch Now</span>
+              </button>
+              </div>
+
+              <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-movieId="@Model.Id" class="btn btn-primary">
+                
+                  <ion-icon name="cart-outline"></ion-icon>
+
+                <span>Buy Ticket</span>
+              </a>
+
+            </div>
+
+            
+
+          </div>
+
+        </div>
+
+</div>
+</div>

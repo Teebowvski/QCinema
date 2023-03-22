@@ -1,0 +1,95 @@
+﻿@model MoviesListviewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+     
+
+
+@await Html.PartialAsync("HomeViewHero")
+
+<section class="upcoming">
+        <div class="container">
+
+          <div class="flex-wrapper">
+
+            <div class="title-wrapper">
+              <p class="section-subtitle">Buy QCinema Movie Tickets</p>
+
+              <h2 class="h2 section-title">Featured Movies</h2>
+            </div>
+
+            <ul class="filter-list">
+
+              
+
+              @foreach (Genre item in Model.Genres)
+             {
+                 <li>
+                <a asp-controller="Movies" asp-action="List" class="filter-btn">@item.Name</a>
+              </li>
+             }
+
+            </ul>
+
+          </div>
+          <ul class="movies-list  has-scrollbar">
+          @foreach (Movie item in Model.Movies)
+          {
+              <li>
+                  <div class="" >
+              <div class="movie-card">
+
+                <a asp-controller="Movie" asp-action="MovieDetails" asp-route-id="@item.Id">
+                  <figure class="card-banner">
+                    <img src="@item.ImageUrl" class="background-img" alt="Sonic the Hedgehog 2 movie poster">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a >
+                    <h3 class="card-title">@item.Name</h3>
+                  </a>
+
+                  <time datetime="2022">2022</time>
+                </div>
+
+                <div class="card-meta ">
+                  <div class=" badge-outline align-middle ">
+                     <p> @if (@item.Category.Name== "Available"){
+                      <span class="badge bg-success text-white">Available</span>}
+                      else if (@item.Category.Name== "Upcoming") {
+
+                           <span class="badge bg-primary text-white">Upcoming</span>
+                      }
+                      </p>
+                  </div>
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT122M">122 min</time>
+                  </div>
+
+                  <div class="rating">
+                   <ion-icon name="cash-outline"></ion-icon>
+
+                    <data>@item.Price</data>
+                  </div>
+                </div>
+
+              </div>
+
+              </div>
+              
+          </li>
+          }
+
+          </ul>
+
+
+           </div>
+      </section>
+
+      <partial name = "_Services" />

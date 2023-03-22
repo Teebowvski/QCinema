@@ -1,0 +1,14 @@
+﻿@model ShoppingCartViewModel
+
+
+@if (Model.ShoppingCart.ShoppingCartItems.Count>0)
+{
+    <li>
+<a asp-controller="ShoppingCart" class="text-danger ">
+
+<span id="cart-status" class="float-right" > @Model.ShoppingCart.ShoppingCartItems.Count</span>
+<img src="~/Images/shopping-cart-solid.svg" style="width:24px;height:20px;" />
+</a>
+
+</li>
+}

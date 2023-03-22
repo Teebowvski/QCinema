@@ -1,0 +1,52 @@
+﻿<html>
+
+<head>
+ <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/css/adminlte.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+  </head>
+  <body>
+<partial name ="_Navbar" />
+
+<partial name ="_Sidebar" />
+
+
+   <div class="content-wrapper">
+            <div class="content-header">
+                
+            </div>
+            <div class="content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+         <aside class="control-sidebar control-sidebar-dark">
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+        </aside>
+       
+
+
+        <partial name ="_Footer" />
+      
+        <script src="/js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/js/adminlte.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+  </body>
+
+</html>

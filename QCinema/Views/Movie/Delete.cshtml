@@ -1,0 +1,79 @@
+﻿@model QCinema.Models.Movie
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Delete</h1>
+
+
+  <div class="row">
+    <div class="col-md-10 offset-2 ">
+        <form asp-action="">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" readonly/>
+              
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" readonly/>
+            
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control"readonly />
+              
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control"readonly />
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="LongDescription" class="control-label"></label>
+                <input asp-for="LongDescription" class="form-control"readonly />
+               
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control"readonly />
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" readonly/>
+               
+            </div>
+            <div class="form-group">
+                <label asp-for="GenreId" class="control-label"></label>
+                <select asp-for="GenreId" class="form-control" asp-items="ViewBag.GenreId"></select>
+               
+            </div>
+            <div class="form-group">
+                <label asp-for="CinemaId" class="control-label" ></label>
+                <select asp-for="CinemaId" class="form-control" asp-items="ViewBag.CinemaId" ></select>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="ProducerId" class="control-label"></label>
+                <select asp-for="ProducerId" class="form-control" asp-items="ViewBag.ProducerId"></select>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="Actor" class="control-label"></label>
+                <select asp-for="Actor.Name" class="form-control" asp-items="ViewBag.Name"></select>
+                
+            </div>
+            <div class="form-group">
+                <a asp-controller="Movie" asp-action="DeleteConfirmed"  class="btn btn-outline-danger float-right">Delete</a> 
+               <a asp-action="Index" class="float-left btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+  
